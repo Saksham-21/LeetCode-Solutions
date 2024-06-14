@@ -6,12 +6,15 @@ public:
         for(int i=0;i<vc.size();i++){
             if(vc[i]<=mid){
                 cnt++;
+                if(cnt==k){
+                    no_of_bouquets++;
+                    cnt=0;
+                }
             }else{
-                no_of_bouquets+=(cnt/k);
                 cnt=0;
             }
         }
-        no_of_bouquets+=(cnt/k);
+        // no_of_bouquets+=(cnt/k);
         return no_of_bouquets>=m;
     }
     int minDays(vector<int>& vec, int m, int k) {
