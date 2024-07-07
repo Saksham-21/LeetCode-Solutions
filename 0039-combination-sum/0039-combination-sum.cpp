@@ -8,13 +8,6 @@ public:
             fvc.push_back(vec);
             return ;
         }
-        // if(candi.size()==ind){
-        //     if(tar==0){
-        //         fvc.push_back(vec);
-        //     }
-        //     return ;
-        // }
-        
         if(candi[ind]<=tar){
             vec.push_back(candi[ind]);
             recursion(ind,tar-candi[ind],candi,vec,fvc);
