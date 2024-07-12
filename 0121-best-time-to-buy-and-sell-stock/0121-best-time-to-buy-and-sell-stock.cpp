@@ -9,7 +9,6 @@ public:
         for(int i=0;i<arr.size();i++){
             if(mini>arr[i]){
                 mini=arr[i];
-                // maxi=arr[i];
             }else{
                 profit=max(profit,arr[i]-mini);
             }
