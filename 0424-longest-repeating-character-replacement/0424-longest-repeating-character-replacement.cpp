@@ -4,13 +4,13 @@ public:
         int l=0,r=0,maxlen=0,maxfreq=0;
         map<char,int> mpp;
         for(;r<s.size();r++){
-            mpp[s[r]-'A']++;
-            maxfreq=max(maxfreq,mpp[s[r]-'A']);
+            mpp[s[r]]++;
+            maxfreq=max(maxfreq,mpp[s[r]]);
             while((r-l+1)-maxfreq>k){
                 if(mpp[s[l]]==1){
                     mpp.erase(s[l]);
                 }else{
-                    mpp[s[l]-'A']--;
+                    mpp[s[l]]--;
                     maxfreq=0;
                     for(auto ch:mpp){
                         maxfreq=max(maxfreq,ch.second);
