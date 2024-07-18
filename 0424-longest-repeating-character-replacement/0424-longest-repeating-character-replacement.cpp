@@ -7,21 +7,10 @@ public:
             mpp[s[r]]++;
             maxfreq=max(maxfreq,mpp[s[r]]);
             while((r-l+1)-maxfreq>k){
-                // if(mpp[s[l]]==1){
-                //     mpp.erase(s[l]);
-                // }else{
-                //     mpp[s[l]]--;
-                //     maxfreq=0;
-                //     for(auto ch:mpp){
-                //         maxfreq=max(maxfreq,ch.second);
-                //     }
-                // }
                 mpp[s[l]]--;
                 l++;
             }
-            if((r-l+1)-maxfreq<=k){
-                maxlen=max(maxlen,r-l+1);   
-            }
+            maxlen=max(maxlen,r-l+1);   
         }
         return maxlen;
     }
