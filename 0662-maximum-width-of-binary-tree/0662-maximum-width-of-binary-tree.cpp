@@ -12,31 +12,31 @@
 class Solution {
 public:
 int widthOfBinaryTree(TreeNode* root) {
-    if(!root) return 0; // If root is null, return 0
+    if(!root) return 0; 
     queue<pair<TreeNode*, long long>> q;
-    q.push({root, 0}); // Push root with index 0
-    long long ans = 0; // Initialize maximum width
+    q.push({root, 0});
+    long long ans = 0; 
     
     while(!q.empty()) {
-        int size = q.size(); // Number of nodes at current level
-        long long mmin = q.front().second; // Minimum index at current level
+        int size = q.size();
+        long long mmin = q.front().second;
         long long first, last;
         
         for(int i = 0; i < size; i++) {
-            long long curr_id = q.front().second - mmin; // Adjusted index
+            long long curr_id = q.front().second - mmin;
             TreeNode* node = q.front().first;
             q.pop();
             
-            if(i == 0) first = curr_id; // First index at current level
-            if(i == size - 1) last = curr_id; // Last index at current level
+            if(i == 0) first = curr_id;
+            if(i == size - 1) last = curr_id;
             
-            if(node->left) q.push({node->left, 2 * curr_id + 1}); // Left child
-            if(node->right) q.push({node->right, 2 * curr_id + 2}); // Right child
+            if(node->left) q.push({node->left, 2 * curr_id + 1});
+            if(node->right) q.push({node->right, 2 * curr_id + 2});
         }
-        ans = max(ans, last - first + 1); // Update maximum width
+        ans = max(ans, last - first + 1);
     }
     
-    return ans; // Return the maximum width
+    return ans;
 }
 
 };
