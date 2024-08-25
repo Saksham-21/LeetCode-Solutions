@@ -1,7 +1,6 @@
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& vc) {
-        // cout<<vc.size()<<endl;
         vector<vector<int>> ans;
         sort(vc.begin(),vc.end());
         for(int i=0;i<vc.size();i++){
